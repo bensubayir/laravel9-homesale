@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         return view('home.index');
     }
-    public function test()
+    public function test(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('home.test');
     }
@@ -35,10 +35,10 @@ class HomeController extends Controller
         echo "Save function<br>";
         echo "First Name :",$_REQUEST["fname"];
         echo "Last Name :",$_REQUEST["fname"];
-        return view('home.test2',
+        return view('home.test',
             [
             'fname' => $_REQUEST["fname"],
-            'lname' => $_REQUEST["laname"],
+            'lname' => $_REQUEST["lname"],
         ]);
 
 
