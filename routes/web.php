@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,10 +13,34 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
+//1-do sth in the route
+Route::get('/hello', function () {
+    return 'Hello World';
+});
+//2-call view in the route
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+
+//3-call controller function
+Route::get('/',[HomeController::class,'index'])->name('home');
+
+
+//4-route controller->view
+Route::get('/test',[HomeController::class,'test'])->name('test');
+
+//5-route with parameters
+Route::get('/param/{id}/{number}',[HomeController::class,'param'])->name('param');
+
+
+
+//6-route with post
+Route::post('/save',[HomeController::class,'save'])->name('save');
+
+
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
