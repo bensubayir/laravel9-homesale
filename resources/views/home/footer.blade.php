@@ -26,22 +26,22 @@
                 <h5 class="text-white mb-4">Photo Gallery</h5>
                 <div class="row g-2 pt-2">
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="img/property-1.jpg" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{{asset('assets')}}/img/property-1.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="img/property-2.jpg" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{{asset('assets')}}/img/property-2.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="img/property-3.jpg" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{{asset('assets')}}/img/property-3.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="img/property-4.jpg" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{{asset('assets')}}/img/property-4.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="img/property-5.jpg" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{{asset('assets')}}/img/property-5.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="img/property-6.jpg" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{{asset('assets')}}/img/property-6.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -83,10 +83,10 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="{{asset('assets')}}/lib/wow/wow.min.js"></script>
+<script src="{{asset('assets')}}/lib/easing/easing.min.js"></script>
+<script src="{{asset('assets')}}/lib/waypoints/waypoints.min.js"></script>
+<script src="{{asset('assets')}}/lib/owlcarousel/owl.carousel.min.js"></script>
 
 <!-- Template Javascript -->
-<script src="js/main.js"></script>
+<script src="{{asset('assets')}}/js/main.js"></script>
