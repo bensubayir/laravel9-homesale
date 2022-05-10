@@ -40,10 +40,14 @@
                                             <label>Description</label>
                                             <input class="form-control" name="description" placeholder="Description">
                                         </div>
-
-                                        <div class="form-group">
-                                            <label>Image</label>
-                                            <input class="file" name="Image" placeholder="Choose image File">
+                                         <div class="form-group">
+                                            <label for="exampleInputFile">Image upload</label>
+                                            <div class="input-group col-xs-12">
+                                                <div class="custom-file">
+                                                    <input type="file" name="image" class="custom-file-input">
+                                                    <label class="form-control custom-file-label" for="exampleInputFile"> Upload Image</label>
+                                                </div>
+                                            </div>
                                         </div>
 
 
