@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Add Category')
+@section('title','Edit Category:'.$data->title)
 
 @section('content')
 
@@ -10,7 +10,7 @@
         <div class="row">
             <!-- Page Header -->
             <div class="col-lg-12">
-                <h1 class="page-header">Add Category </h1>
+                <h1 class="page-header">Edit Category:{{$data->title}} </h1>
             </div>
             <!--End Page Header -->
             <div class="row">
@@ -20,55 +20,69 @@
                         <div class="panel-heading">
                             Category Elements
                         </div>
-                        <form role="form" action="/admin/category/store" method="post">
+
+                        <form role="form" action="/admin/category/update/{{$data->id}}" method="post">
                             @csrf
-
-
                         <div class="panel-body">
 
                             <div class="row">
                                 <div class="col-lg-6">
 
+
                                     <div class="form-group">
                                         <label>Title</label>
-                                        <input class="form-control" name="title" placeholder="Title">
+                                        <input class="form-control" name="title" value="{{$data->title}}" >
                                     </div>
                                     <div class="form-group">
                                         <label>Keywords</label>
-                                        <input class="form-control" name="keywords" placeholder="Keywords">
+                                        <input class="form-control" name="keywords" value="{{$data->keywords}}">
                                     </div>
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <input class="form-control" name="description" placeholder="Description">
+                                        <input class="form-control" name="description" value="{{$data->description}}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputFile">Image upload</label>
-                                        <div class="input-group col-xs-12">
+                                        <label for="exampleInputFile">Image </label>
+                                        <div class="input-group ">
                                             <div class="custom-file">
-                                                <input type="file" name="image" class="custom-file-input">
-                                                <label class="form-control custom-file-label" for="exampleInputFile">Upload image</label>
+                                                <input type="file" class="custom-file-input" name="image">
+                                                <label class="form-control custom-file-label" for="exampleInputFile">Image file</label>
+
                                             </div>
+
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id=""></span>
+
+
                                         </div>
                                     </div>
+
+
+
                                     <div class="form-group">
-                                        <label>Status</label>
+                                        <label>Status </label>
                                         <select class="form-control" name="status">
+                                            <option selected{{$data->status}}></option>
                                             <option>True</option>
                                             <option>False</option>
                                         </select>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary" name="save "> Save</button>
+                                    <button type="submit" class="btn btn-primary">Update Data</button>
 
                                 </div>
-                            </div>
-                        </div>
-                    </form>
+
+
                     </div>
-                    <!-- End Form Elements -->
-                </div>
+
             </div>
+
         </div>
+                </form>
+        <!-- End Form Elements -->
+    </div>
+    </div>
+    </div>
 
 
 
