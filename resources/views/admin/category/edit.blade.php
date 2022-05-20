@@ -42,21 +42,27 @@
                                         <input class="form-control" name="description" value="{{$data->description}}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputFile">Image upload</label>
-                                        <div class="input-group col-xs-12">
+                                        <label for="exampleInputFile">Image </label>
+                                        <div class="input-group ">
                                             <div class="custom-file">
-                                                <input type="file" name="image" class="custom-file-input">
-                                                <label class="form-control custom-file-label" for="exampleInputFile"> Upload Image</label>
+                                                <input type="file" class="custom-file-input" name="image">
+                                                <label class="form-control custom-file-label" for="exampleInputFile">Image file</label>
+
                                             </div>
+
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id=""></span>
+
+
                                         </div>
                                     </div>
 
 
 
                                     <div class="form-group">
-                                        <label>Status</label>
+                                        <label>Status </label>
                                         <select class="form-control" name="status">
-                                            <option selected>{{$data->status}}</option>
+                                            <option selected{{$data->status}}></option>
                                             <option>True</option>
                                             <option>False</option>
                                         </select>
@@ -66,11 +72,13 @@
 
                                 </div>
 
-                </div>
-            </div>
-                        </form>
-        </div>
 
+                    </div>
+
+            </div>
+
+        </div>
+                </form>
         <!-- End Form Elements -->
     </div>
     </div>

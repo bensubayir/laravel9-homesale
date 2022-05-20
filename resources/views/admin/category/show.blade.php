@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Edit Category:'.$data->title)
+@section('title','Show Category:'.$data->title)
 
 @section('content')
 
@@ -10,79 +10,53 @@
         <div class="row">
             <!-- Page Header -->
             <div class="col-lg-12">
-                <h1 class="page-header">Edit Category:{{$data->title}} </h1>
+                <h1 class="page-header">Show Category:{{$data->title}} </h1>
+                <a href="/admin/category/edit/{{$data->id}} "class="btn btn-primary" style="width: 200px">Edit</a>
+                <a href="/admin/category/destroy/{{$data->id}}" onclick="return confirm('Deleting !! Are you sure ?') "class="btn btn-danger" style="width: 200px">Delete</a>
+
             </div>
             <!--End Page Header -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Form Elements -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Category Elements
-                        </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Detail Data
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
 
-                        <form role="form" action="/admin/category/update/{{$data->id}}" method="post">
-                            @csrf
-                        <div class="panel-body">
+                            <tr>
+                                <th>Id</th>
+                                <td>{{$data->id}}</td>
+                            </tr>
+                            <tr>
+                                <th>Title</th>
+                                <td>{{$data->title}}</td>
+                            </tr>
+                            <tr>
+                                <th>Keywords</th>
+                                <td>{{$data->keywords}}</td>
+                            </tr>
+                            <tr>
+                                <th>Image</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>{{$data->status}}</td>
+                            </tr>
+                            <tr>
+                                <th>Created Data</th>
+                                <td>{{$data->created_at}}</td>
+                            </tr>
+                            <tr>
+                                <th>Update Data</th>
+                                <td>{{$data->Updated_at}}</td>
+                            </tr>
 
-                            <div class="row">
-                                <div class="col-lg-6">
-
-
-                                    <div class="form-group">
-                                        <label>Title</label>
-                                        <input class="form-control" name="title" value="{{$data->title}}" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Keywords</label>
-                                        <input class="form-control" name="keywords" value="{{$data->keywords}}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <input class="form-control" name="description" value="{{$data->description}}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">Image </label>
-                                        <div class="input-group ">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" name="image">
-                                                <label class="form-control custom-file-label" for="exampleInputFile">Image file</label>
-
-                                            </div>
-
-                                            <div class="input-group-append">
-                                                <span class="input-group-text" id=""></span>
-
-
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="form-group">
-                                        <label>Status </label>
-                                        <select class="form-control" name="status">
-                                            <option selected{{$data->status}}></option>
-                                            <option>True</option>
-                                            <option>False</option>
-                                        </select>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary">Update Data</button>
-
-                                </div>
-
-
+                        </table>
                     </div>
-
+                </div>
             </div>
-
-        </div>
-                </form>
-        <!-- End Form Elements -->
-    </div>
-    </div>
-    </div>
 
 
 
