@@ -20,7 +20,7 @@
                         <div class="panel-heading">
                             Category Elements
                         </div>
-                        <form role="form" action="{{route('admin.category.store')}}" method="post">
+                        <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
 
 
@@ -42,12 +42,13 @@
                                         <input class="form-control" name="description" placeholder="Description">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputFile">Image upload</label>
+                                        <label for="exampleInputFile">Image</label>
                                         <div class="input-group col-xs-12">
                                             <div class="custom-file">
-                                                <input type="file" name="image" class="custom-file-input">
-                                                <label class="form-control custom-file-label" for="exampleInputFile">Upload image</label>
+                                                <input type="file" name="image" class="custom-file-input" name="image">
+                                                <label class="form-control custom-file-label" for="exampleInputFile">Choose image file </label>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="form-group">

@@ -21,7 +21,7 @@
                             Category Elements
                         </div>
 
-                        <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
+                        <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                         <div class="panel-body">
 
@@ -46,15 +46,10 @@
                                         <div class="input-group ">
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input" name="image">
-                                                <label class="form-control custom-file-label" for="exampleInputFile">Image file</label>
+                                                <label class="form-control custom-file-label" for="exampleInputFile">Choose image file</label>
 
                                             </div>
 
-                                            <div class="input-group-append">
-                                                <span class="input-group-text" id=""></span>
-
-
-                                        </div>
                                     </div>
 
 
