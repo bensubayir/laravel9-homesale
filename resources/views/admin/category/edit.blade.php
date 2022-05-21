@@ -21,7 +21,7 @@
                             Category Elements
                         </div>
 
-                        <form role="form" action="/admin/category/update/{{$data->id}}" method="post">
+                        <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
                             @csrf
                         <div class="panel-body">
 
@@ -62,9 +62,9 @@
                                     <div class="form-group">
                                         <label>Status </label>
                                         <select class="form-control" name="status">
-                                            <option selected{{$data->status}}></option>
+                                            <option selected>{{$data->status}}</option>
                                             <option>True</option>
-                                            <option>False</option>
+                                            <option> False </option>
                                         </select>
                                     </div>
 

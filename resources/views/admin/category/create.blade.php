@@ -20,7 +20,7 @@
                         <div class="panel-heading">
                             Category Elements
                         </div>
-                        <form role="form" action="/admin/category/store" method="post">
+                        <form role="form" action="{{route('admin.category.store')}}" method="post">
                             @csrf
 
 

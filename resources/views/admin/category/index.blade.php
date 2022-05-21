@@ -11,7 +11,7 @@
             <!-- Page Header -->
             <div class="col-lg-12">
                 <h1 class="page-header"> </h1>
-                <a href="/admin/category/create "class="btn btn-primary" style="width: 200px">Add Category</a>
+                <a href="{{route('admin.category.create')}} "class="btn btn-primary" style="width: 200px">Add Category</a>
 
 
             </div>
@@ -48,10 +48,10 @@
                                 <td>{{$rs->description}}</td>
                                 <td>{{$rs->image}}</td>
                                 <td>{{$rs->status}}</td>
-                                <td><a href="/admin/category/edit/{{$rs->id}}"class="btn btn-primary btn-sm">Edit</a></td>
-                                <td> <a href="/admin/category/destroy/{{$rs->id}}" class="btn btn-danger btn-sm"
+                                <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}} "class="btn btn-primary btn-sm">Edit</a></td>
+                                <td> <a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-danger btn-sm"
                                         onclick="return confirm('Deleting !! Are you sure ?')" >Delete</a></td>
-                                <td><a href="/admin/category/show/{{$rs->id}}"class="btn btn-success btn-sm">Show</a></td>
+                                <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}"class="btn btn-success btn-sm">Show</a></td>
                             </tr>
 
                         @endforeach
