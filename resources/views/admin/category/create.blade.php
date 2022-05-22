@@ -26,6 +26,17 @@
 
                         <div class="panel-body">
 
+                            <div class="form-group">
+                                <label >Parent Category</label>
+
+                                <select class="form-control select2" name="parent_id" style="height: 40px">
+                                    <option value="0" selected="selected">Main Category</option>
+                                    @foreach($data as $rs )
+                                        <option value="{{$rs->id}}" >{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="row">
                                 <div class="col-lg-6">
 
