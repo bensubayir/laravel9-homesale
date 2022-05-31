@@ -32,8 +32,7 @@
                                 <select class="form-control select2" name="parent_id" style="height: 40px">
                                     <option value="0" selected="selected">Main Category</option>
                                     @foreach($data as $rs )
-                                        <option value="{{$rs->id}}" >{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
-                                        </option>
+                                        <option value="{{$rs->id}}"> {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}} </option>
                                     @endforeach
                                 </select>
                             </div>

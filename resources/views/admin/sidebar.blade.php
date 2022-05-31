@@ -41,10 +41,10 @@
 
             </li>
             <li class="">
-                <a href="index.html"><i class="fa fa-flask fa-bars"></i> Categories</a>
+                <a href="/admin/category"><i class="fa fa-flask fa-bars"></i> Categories</a>
             </li>
             <li>
-                <a href="/admin/product"><i class="fa fa-flask fa-bars"></i> Products</a>
+                <a href="/admin/home"><i class="fa fa-flask fa-bars"></i> Homes</a>
             </li>
 
             <li>

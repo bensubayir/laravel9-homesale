@@ -1,30 +1,15 @@
 <?php
-
+//önceden AdminHomecontrollerdı
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Home;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class CategoryController extends Controller
+class AdminPageHomeController extends Controller
 {
-    protected $appends =[
-        'getParentsTree'
-    ];
-
-    public static function getParentsTree($category, $title){
-
-
-
-    if ($category->parent_id ==0)
-    {
-        return $title;
-    }
-    $parent=Category::find($category -> parent_id);
-    $title = $parent->title . ' > ' . $title;
-    return CategoryController::getParentsTree($parent,$title);
-    }
 
 
     /**
@@ -35,8 +20,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $data= Category::all();
-        return view('admin.category.index',[
+        $data= Home::all();
+        return view('admin.home.index',[
             'data' => $data
         ]);
     }
@@ -48,10 +33,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $data= Category::all();
-        return view('admin.category.create',[
-            'data' => $data
-
+        $data=Category::all();
+        return view('admin.home.create',[
+            'data' =>$data
             ]);
 
     }
@@ -65,30 +49,40 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        $data=new Category();
-        $data->parent_id =$request->parent_id;
+        $data=new Home();
+        $data->category_id =$request->category_id;
+        $data->user_id =0; //$request->user_id;
         $data->title =$request->title;
         $data->keywords =$request->keywords;
         $data->description =$request->description;
+        $data->detail =$request->detail;
+        $data->price =$request->price;
+        $data->dwelling_type =$request->dwelling_type;
+        $data->num_of_rooms =$request->num_of_rooms;
+        $data->warming_type =$request->warming_type;
+        $data->province =$request->province;
+        $data->district =$request->district;
+        $data->building_age =$request->building_age;
+        $data->floor_location =$request->floor_location;
         $data->status =$request->status;
         if($request->file('image')){
             $data->image= $request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/category');
+        return redirect('admin/home');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models/Home $home
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category,$id)
+    public function show(Home $home,$id)
     {
         //echo "Show area: ",$id;
-        $data= Category::find($id);
-        return view('admin.category.show',[
+        $data= Home::find($id);
+        return view('admin.home.show',[
             'data' => $data
         ]);
 
@@ -98,16 +92,16 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Home $home
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category,$id)
+    public function edit(Home $home,$id)
     {
         // echo "my edit id:",$id;
 
-        $data= Category::find($id);
+        $data= Home::find($id);
         $datalist=Category::all();
-               return view('admin.category.edit',[
+               return view('admin.home.edit',[
                    'data' => $data,
                    'datalist' => $datalist
                ]);
@@ -118,40 +112,52 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Home  $home
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category,$id)
+    public function update(Request $request, Home $home,$id)
     {
         //
-        $data= Category::find($id);
-        $data->parent_id =$request->parent_id;
+        $data=Home::find($id);
+        $data->category_id =$request->category_id;
+        $data->user_id =0; //$request->user_id;
         $data->title =$request->title;
         $data->keywords =$request->keywords;
         $data->description =$request->description;
+        $data->detail =$request->detail;
+        $data->price =$request->price;
+        $data->dwelling_type =$request->dwelling_type;
+        $data->num_of_rooms =$request->num_of_rooms;
+        $data->warming_type =$request->warming_type;
+        $data->province =$request->province;
+        $data->district =$request->district;
+        $data->building_age =$request->building_age;
+        $data->floor_location =$request->floor_location;
         $data->status =$request->status;
         if($request->file('image')){
             $data->image= $request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/category');
+        return redirect('admin/home');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Home $home
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category,$id)
+    public function destroy(Home $home,$id)
     {
         //
-        $data=Category::find($id);
+        $data=Home::find($id);
         if($data->image && Storage::disk('public')->exists($data->image)){
             Storage::delete($data->image);
         }
+
         $data->delete();
-        return redirect('admin/category');
+        return redirect('admin/home');
 
     }
 }
