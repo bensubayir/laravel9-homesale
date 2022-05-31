@@ -51,9 +51,15 @@
                                         <input type="text" class="form-control" name="description" placeholder="Description">
                                     </div>
                                     <div class="form-group">
-                                        <label>Price</label>
-                                        <input type="number" class="form-control" name="price" value="0">
+                                        <label>Minimum Price</label>
+                                        <input type="number" class="form-control" name="min_price" value="0">
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>Maximum Price</label>
+                                        <input type="number" class="form-control" name="max_price" value="0">
+                                    </div>
+
                                     <div class="form-group">
                                         <label>Dwelling type</label>
                                         <input type="text" class="form-control" name="dwelling_type" placeholder="dwelling_type">

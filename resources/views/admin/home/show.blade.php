@@ -31,7 +31,10 @@
                             </tr>
                             <tr>
                                 <th>Category</th>
-                                <td>{{$data->category_id}}</td>
+                                <td>
+                                    {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data->category,$data->category->title)}}
+
+                                </td>
                             </tr>
                             <tr>
                                 <th>Title</th>
@@ -46,8 +49,12 @@
                                 <td>{{$data->description}}</td>
                             </tr>
                             <tr>
-                                <th>Price</th>
-                                <td>{{$data->price}}</td>
+                                <th>Minimum Price</th>
+                                <td>{{$data->min_price}}</td>
+                            </tr>
+                            <tr>
+                            <th>Maximum Price</th>
+                            <td>{{$data->max_price}}</td>
                             </tr>
                             <tr>
                                 <th>Dwelling Type</th>

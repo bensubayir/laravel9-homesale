@@ -56,7 +56,8 @@ class AdminPageHomeController extends Controller
         $data->keywords =$request->keywords;
         $data->description =$request->description;
         $data->detail =$request->detail;
-        $data->price =$request->price;
+        $data->min_price =$request->min_price;
+        $data->max_price =$request->max_price;
         $data->dwelling_type =$request->dwelling_type;
         $data->num_of_rooms =$request->num_of_rooms;
         $data->warming_type =$request->warming_type;
@@ -125,7 +126,8 @@ class AdminPageHomeController extends Controller
         $data->keywords =$request->keywords;
         $data->description =$request->description;
         $data->detail =$request->detail;
-        $data->price =$request->price;
+        $data->min_price =$request->min_price;
+        $data->max_price =$request->max_price;
         $data->dwelling_type =$request->dwelling_type;
         $data->num_of_rooms =$request->num_of_rooms;
         $data->warming_type =$request->warming_type;

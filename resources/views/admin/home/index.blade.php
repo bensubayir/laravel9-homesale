@@ -30,7 +30,7 @@
                             <th> Title </th>
                             <th> Province </th>
                             <th> District </th>
-                            <th> Price </th>
+
                             <th>Image</th>
                             <th>Status</th>
                             <th style="width: 40px">Edit</th>
@@ -43,11 +43,11 @@
                         @foreach($data as $rs)
                             <tr>
                                 <td>{{$rs->id}}</td>
-                                <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
+                                <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</td>
                                 <td>{{$rs->title}}</td>
                                 <td>{{$rs->province}}</td>
                                 <td>{{$rs->district}}</td>
-                                <td>{{$rs->price}}</td>
+
 
                                 <td>
                                     @if($rs->image)

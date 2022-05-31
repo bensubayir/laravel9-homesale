@@ -52,10 +52,13 @@
                                         <label>Description</label>
                                         <input class="form-control" name="description" value="{{$data->description}}">
                                     </div>
-
                                     <div class="form-group">
-                                        <label>Price</label>
-                                        <input type="number" class="form-control" name="price" value="{{$data->price}}">
+                                        <label>Minimum Price</label>
+                                        <input type="number" class="form-control" name="min_price" value="{{$data->min_price}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Maximum Price</label>
+                                        <input type="number" class="form-control" name="max_price" value="{{$data->max_price}}">
                                     </div>
                                     <div class="form-group">
                                         <label>Dwelling type</label>
