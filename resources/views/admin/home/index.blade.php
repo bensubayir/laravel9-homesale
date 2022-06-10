@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','home list')
+@section('title','Home list')
 
 @section('content')
 
@@ -30,8 +30,8 @@
                             <th> Title </th>
                             <th> Province </th>
                             <th> District </th>
-
                             <th>Image</th>
+                            <th>Image Gallery</th>
                             <th>Status</th>
                             <th style="width: 40px">Edit</th>
                             <th style="width: 40px">Delete</th>
@@ -53,6 +53,13 @@
                                     @if($rs->image)
                                         <img src="{{Storage::url($rs->image)}}" style="height: 40px ">
                                     @endif
+                                </td>
+                                <td>{{$rs->status}}</td>
+                                <td> <a href="{{route('admin.image.index',['hid'=>$rs->id])}} "
+                                        onclick="return !window.open(this.href, '','top=50 left=100 width=1100,height=700')">
+                                    <img src="{{asset('assets')}}/admin/img/gallery.png" style="height: 40px ">
+
+                                    </a>
                                 </td>
                                 <td>{{$rs->status}}</td>
                                 <td><a href="{{route('admin.home.edit',['id'=>$rs->id])}} "class="btn btn-primary btn-sm">Edit</a></td>

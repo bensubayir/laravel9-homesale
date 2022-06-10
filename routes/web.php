@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\AdminPanel\AdminPageHomeController;
+use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -74,4 +75,12 @@ Route::get('/',[AdminHomeController::class,'index'])->name('index');
         Route::get('/destroy/{id}',  'destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
     });
+    //*******************ADMİN PAGE HOME IMAGE GALLERY ROUTES************************
+    Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
+        Route::get('/{hid}',  'index')->name('index');
+        Route::post('/store/{hid}',  'store')->name('store');
+        Route::get('/destroy/{hid}/{id}',  'destroy')->name('destroy');
+
+    });
 });
+

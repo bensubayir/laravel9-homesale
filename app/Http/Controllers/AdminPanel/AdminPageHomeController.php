@@ -20,6 +20,8 @@ class AdminPageHomeController extends Controller
     public function index()
     {
         //
+
+        $category=Category::all();
         $data= Home::all();
         return view('admin.home.index',[
             'data' => $data
