@@ -1,7 +1,9 @@
 @extends('layouts.adminbase')
 
 @section('title','Edit home:'.$data->title)
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+@endsection
 @section('content')
 
     <!--  page-wrapper -->
@@ -91,9 +93,19 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Detail Information</label>
-                                        <textarea class="form-control" name="detail">
+                                        <textarea class="form-control" id="detail" name="detail">
                                          {{$data->detail}}
                                         </textarea>
+                                        <script>
+                                            ClassicEditor
+                                                .create( document.querySelector( '#detail' ) )
+                                                .then( editor => {
+                                                    console.log( editor );
+                                                } )
+                                                .catch( error => {
+                                                    console.error( error );
+                                                } );
+                                        </script>
                                     </div>
 
                                     <div class="form-group">
