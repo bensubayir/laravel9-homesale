@@ -1,10 +1,23 @@
+
+
+
 <div class="col-md-6 animated fadeIn">
+
     <div class="owl-carousel header-carousel">
+        @foreach($sliderdata as $rs)
         <div class="owl-carousel-item">
-            <img class="img-fluid" src="{{asset('assets')}}/img/carousel-1.jpg" alt="">
+            <img src="{{Storage::url($rs->image)}}" alt="">
+
         </div>
+
         <div class="owl-carousel-item">
-            <img class="img-fluid" src="{{asset('assets')}}/img/carousel-2.jpg" alt="">
+            <img src="{{Storage::url($rs->image)}}" alt="">
+
         </div>
+        @endforeach
     </div>
+
 </div>
+
+
+
